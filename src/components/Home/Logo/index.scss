@@ -8,30 +8,56 @@
     bottom: 0;
     left: auto;
     margin: auto;
-    opacity: 0;
-
+  
     svg {
-        width: 100%;
-        height: auto;
-        bottom: 0;
-        transform: rotateZ(30deg) !important;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      transform: rotateZ(30deg) !important;
+      fill: none;
+      stroke: #ffd700;
+      stroke-width: 10;
+      stroke-dasharray: 40000;
+      stroke-dashoffset: 40000;
+      -webkit-animation: dash 5s linear forwards;
+      animation: dash 3s 1s cubic-bezier(0.42, 0, 0.92, 0.78) forwards; 
     }
-
-    .solid-logo{
-        position: absolute;
-        top: auto;
-        right: 15%;
-        bottom: auto;
-        left: 0;
-        margin: auto;
-        width: 100%;
-        opacity: 0;
-        transform: rotateZ(30deg);
-        z-index: 1;
+  
+    .solid-logo {
+      position: absolute;
+      top: auto;
+      right: 15%;;
+      bottom: auto;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      transform: rotateZ(30deg) !important;
+      animation: emerge 3s 3s  backwards;
+      z-index: 1;
     }
-}
-
-.svg-container {
+  }
+  
+  .svg-container {
     stroke: #ffd700;
     stroke-width: 10px;
-}
+  }
+  
+  @-webkit-keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @-webkit-keyframes emerge {
+    0%   {opacity: 0}
+    100% {opacity: 1}
+  }
+  @keyframes emerge {
+    0%   {opacity: 0}
+    100% {opacity: 1}
+  }
